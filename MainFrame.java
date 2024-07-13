@@ -168,7 +168,7 @@ public class MainFrame extends JFrame {
                         //result = MergeSort.mergeSort(input);
                         break;
                     case "Closest-Pair Problem":
-                        //result = ClosestPairProblem.closestPairProblem(input);
+                        result = assignment5.ClosestPairProblem.closestPairProblem(input);
                         break;
                     case "Strassen's Matrix Multiplication":
                         //result = StrassensMatrixMultiplication.strassensMatrixMultiplication(input);
@@ -187,8 +187,12 @@ public class MainFrame extends JFrame {
                         //result = KruskalsMST.kruskalsMST(input);
                         break;
                     case "Dijkstra's Shortest Path":
-                        target = targetText.isEmpty() ? 0 : Integer.parseInt(targetText);
-                        //result = DijkstrasShortestPath.dijkstrasShortestPath(input, target);
+                        try {
+                            target = Integer.parseInt(targetText);
+                            result = assignment5.DijkstraShortestPath.dijkstra(input, target);
+                        } catch (NumberFormatException ex) {
+                            result = "Invalid target node. Please enter a valid integer.";
+                        }
                         break;
                     case "Huffman Codes":
                         //result = HuffmanCodes.huffmanCodes(input);
